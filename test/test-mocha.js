@@ -50,5 +50,27 @@ describe('Testes do Index.js', function () {
             assert.match(frase3, /([Invesstools])/);
         });
     });
+
+    describe("Teste da Função Soma", function () {
+        it("A função soma retorna 2 para soma(1,1)", function () {
+            assert.equal(soma(1,1), 2);
+        });
+        it("A função soma retorna 4 para soma(2,2)", function () {
+            assert.equal(soma(2,2), 4);
+        });
+        it("A função soma retorna 9 para soma(4,5)", function () {
+            assert.equal(soma(4,5), 9);
+        });
+        it("A função soma retorna 13 para soma(6,7)", function () {
+            assert.equal(soma(6,7), 13);
+        });
+        it("A função soma retorna 18 para soma(9,9)", function () {
+            assert.equal(soma(9,9), 18);
+        });
+    });
+
+    describe("Teste da página do Google", function () {
+        let caminho = "https://www.google.com/";
+    });
     
 });
