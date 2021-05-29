@@ -4,14 +4,15 @@
   "description": "Estudo dirigido TDD",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "jest"
   },
   "author": "Igor Deo",
   "license": "ISC",
   "devDependencies": {
+    "axios": "^0.21.1",
     "chai": "^4.3.4",
     "chai-match": "^1.1.1",
-    "jest": "^27.0.1",
+    "jest": "^27.0.2",
     "mocha": "^8.4.0",
     "nock": "^13.0.11"
   }

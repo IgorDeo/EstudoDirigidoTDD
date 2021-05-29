@@ -1,6 +1,10 @@
 const assert = require('chai').assert;
 const soma = require('../soma.js').soma;
 const index = require('../index.js');
+const axios = require('axios')
+const nock = require('nock')
+
+
 
 
 describe('Testes do Index.js no mocha', function () {
@@ -69,8 +73,16 @@ describe('Testes do Index.js no mocha', function () {
         });
     });
 
-    describe("Teste da página do Google", function () {
-        let caminho = "https://www.google.com/";
+    describe("Teste da página do Google",function () {       
+        it("O HTML da página possui a tag <body>", async function () {
+            let caminho = "https://www.google.com/";
+            let respostaReq;
+            
+            nock("https://www.google.com").get('/').reply(200, `<html><head></head><body></body></html>`);
+    
+            await axios.get(caminho).then(response => {respostaReq = response.data});
+            assert.match(respostaReq, /(<body>)/)
+        })
     });
     
 });
